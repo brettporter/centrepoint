@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.effectivemaven.centrepoint.plugins</groupId>
+    <artifactId>plugins-parent</artifactId>
+    <version>1-SNAPSHOT</version>
+    <relativePath>../plugins-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>continuum-builds-plugin</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Centrepoint Plugin for Continuum Builds</name>
+  <description>
+    Retrieve build results from a Continuum server and display as a panel in the Centrepoint project page.
+  </description>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.continuum</groupId>
+      <artifactId>continuum-xmlrpc-api</artifactId>
+      <version>1.3.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.continuum</groupId>
+      <artifactId>continuum-xmlrpc-client</artifactId>
+      <version>1.3.3</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>1.2</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <excludes>
+                  <exclude>com.effectivemaven.centrepoint:model</exclude>
+                </excludes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

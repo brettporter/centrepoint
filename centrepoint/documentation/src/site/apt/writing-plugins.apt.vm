@@ -1,0 +1,191 @@
+ -----
+ Writing Centrepoint Plugins
+ -----
+ Brett Porter
+ -----
+ 5 July 2009
+ -----
+
+Writing Centrepoint Plugins
+
+  Simple plugins can be written to add panels to the right-hand side of the project information page.
+  
+* Creating a Plugin
+  
+  To create a plugin skeleton, use the following Archetype command:
+  
+----
+mvn archetype:generate -DarchetypeGroupId=com.effectivemaven.centrepoint \
+    -DarchetypeArtifactId=plugin-archetype \
+    -DarchetypeVersion=${project.version}
+----
+
+  The POM will depend on the required Centrepoint <<<model>>> artifact:
+  
+----
+<dependency>
+  <groupId>com.effectivemaven.centrepoint</groupId>
+  <artifactId>model</artifactId>
+  <version>${project.version}</version>
+</dependency>
+----
+
+  There are 3 files in the archetype: <<<src/main/resources/META-INF/centrepoint/plugin.properties>>>, 
+  <<<MyPlugin.java>>> and <<<MyModel.java>>>, and some associated test cases.
+  
+  The properties resource is used to tell Centrepoint that the artifact is a plugin and to point to the <<<MyPanel>>>
+  class for loading.
+  
+----
+panel.class=com.effectivemaven.centrepoint.plugins.MyPlugin
+---- 
+  
+  The Java files can be renamed as desired as long as the properties file is updated accordingly.
+  
+  The plugin Java file will look similar to the following:
+  
+----
+import com.effectivemaven.centrepoint.model.Project;
+import com.effectivemaven.centrepoint.model.plugin.ConfigurablePanel;
+import com.effectivemaven.centrepoint.model.plugin.PanelItem;
+import com.effectivemaven.centrepoint.model.plugin.PanelPlugin;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class MyPlugin
+    implements PanelPlugin, ConfigurablePanel<MyModel>
+{
+    /**
+     * Get a list of items present in the panel.
+     * 
+     * @return the list of panel items
+     */
+    public List<PanelItem> getItems( Project project )
+    {
+        PanelItem item = new PanelItem( "My Link", getModel( project ).getLink() );
+        return Arrays.asList( item );
+    }
+
+    /**
+     * The title to display for the panel.
+     * 
+     * @return the panel title
+     */
+    public String getTitle( Project project )
+    {
+        return "Links";
+    }
+
+    public MyModel getModel( Project project )
+    {
+        MyModel extensionModel = (MyModel) project.getExtensionModel( getId() );
+        if ( extensionModel == null )
+        {
+            extensionModel = new MyModel();
+            project.addExtensionModel( extensionModel );
+        }
+        return extensionModel;
+    }
+
+    public String getId()
+    {
+        return "my-plugin";
+    }
+}
+---- 
+
+  In this example, the <<<PanelPlugin>>> interface is compulsory and requires implementing the following methods:
+  
+    * <<<getTitle( project )>>> - return the title for the panel to show on the given project
+    
+    * <<<getItems( project )>>> - return a list of items to show in the panel. Each item can contain a label and an
+      optional URL to link to.
+      
+  The <<<ConfigurablePanel>>> interface is optional. When given, it allows the project to reference configuration
+  from Centrepoint, and an "Edit configuration" link will appear below the panel. When this is used, you must
+  supply a configuration model class such as the generated <<<MyModel>>> class (which is also not needed if the plugin
+  does not require any configuration).
+  
+  The plugin must implement the following methods:
+  
+    * <<<getId()>>> - the configuration model identifier, corresponding to the value returned by the model's
+      <<<getId()>>> method.
+      
+    * <<<getModel( project )>>> - retrieve the configuration model from the project, or create a new instance and add it
+      to the project.
+      
+  The configuration model class itself will look like the following:
+  
+----  
+import com.effectivemaven.centrepoint.model.ExtensionModel;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class MyModel
+    implements ExtensionModel
+{
+    private String link;
+
+    public String getId()
+    {
+        return "my-plugin";
+    }
+
+    public void setLink( String link )
+    {
+        this.link = link;
+    }
+
+    public String getLink()
+    {
+        return link;
+    }
+
+    public Map<String, String> getValuesAsMap()
+    {
+        Map<String, String> values = new HashMap<String, String>();
+        values.put( "link", link );
+        return values;
+    }
+
+    public void setValuesFromMap( Map<String, String> values )
+    {
+        this.link = values.get( "link" );
+    }
+
+    public List<String> getKeys()
+    {
+        return Arrays.asList( "link" );
+    }
+
+}
+----
+
+  The model is typically a bean class with the configuration needed, however it can be initialized in any way desired.
+  It is required to implement the <<<ExtensionModel>>> interface and to define the following methods:
+  
+    * <<<getId()>>> - return the unique identifier of the configuration when stored in the Centrepoint configuration
+      store.
+    
+    * <<<getValuesAsMap()>>> - add all state in the model to a map for storing in the Centrepoint configuration.
+    
+    * <<<setValuesFromMap( values )>>> - retrieve all state in the model from the supplied map that was retrieved from
+      the Centrepoint configuration.
+      
+    * <<<getKeys()>>> - return a list of values that the model supports in the above maps (even if they may not be in
+      the map loaded from the Centrepoint configuration).
+      
+  Once all of the above is written, the plugin can be built and installed.
+  
+* Installing the Plugin
+
+  To use the plugin, simply add the JAR to <<<WEB-INF/lib>>> within the Centrepoint web application (or add it as
+  a runtime-scoped dependency in <<<webapp/pom.xml>>> and rebuild the application). After restarting the application
+  the plugin will be displayed on the project pages.
+
+
+  

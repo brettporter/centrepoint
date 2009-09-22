@@ -1,0 +1,34 @@
+ ---
+ Centrepoint Development Documentation
+ ---
+ 23 June 2009
+ ---
+ Brett Porter
+ ---
+ 
+Centrepoint Development Documentation
+
+  This site contains information relevant to the development of Centrepoint. Specific information on individual
+  modules (where relevant) can be found by using the navigation on the left. An overview is presented below.
+  
+  A suitable entry point for understanding functionality can be found in the {{{stories/index.html} Stories}} page.
+  
+* Architecture
+
+  As a sample application, the structure is currently very simple.
+  
+  The application is project-centric, so a project is defined and everything known about it is stored in the 
+  {{{model/index.html} model}} classes (or some extended data). The model data is stored and retrieved as needed using 
+  the {{{store-api/index.html} store-api}} classes, which can be implemented for different centralised storage
+  locations. The default provided implementation is provided in {{{store-file/index.html} store-file}} which simply
+  stores the current gathered information in properties files.
+  
+  Projects can currently only be imported into the application from Maven projects, which is the responsibility of the
+  {{{maven-importer/index.html} maven-importer}} module.
+  
+  The {{{webapp/index.html} webapp}} module contains the code and web files to render the user interface for the
+  application using Wicket. These interact with the above modules to manage the available project information and
+  gather remote data. The information is presented to the user in a number of configurable <panels>. New panels
+  can be added dynamically (potentially through new modules included in the web application if needed).
+  
+  There are further notes on writing panel plugins in the main application documentation.

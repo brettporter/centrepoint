@@ -1,0 +1,11 @@
+<metadata>
+  <groupId>com.effectivemaven.test</groupId>
+  <artifactId>artifact</artifactId>
+  <versioning>
+    <release>1.2</release>
+    <versions>
+      <version>1.0</version>
+      <version>1.2</version>
+    </versions>
+  </versioning>
+</metadata>

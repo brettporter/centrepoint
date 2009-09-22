@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><archetype>
+  <id>centrepoint-plugin</id>
+  <sources>
+    <source>src/main/java/MyModel.java</source>
+    <source>src/main/java/MyPlugin.java</source>
+  </sources>
+  <testSources>
+    <source>src/test/java/MyModelTest.java</source>
+    <source>src/test/java/MyPluginTest.java</source>
+  </testSources>
+  <resources>
+    <resource>src/main/resources/META-INF/centrepoint/plugin.properties</resource>
+  </resources>
+</archetype>

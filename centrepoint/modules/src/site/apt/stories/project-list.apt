@@ -1,0 +1,21 @@
+ ---
+ Project List
+ ---
+ 23 June 2009
+ ---
+ Brett Porter
+ ---
+ 
+Project List and Entry Page
+
+  A user first visiting the front page of the application will be sent to the projects list.
+  
+  All projects available in the application will be listed using their name and the description. Each will be linked
+  to the {{{view-project.html} individual project details page}}.
+  
+  The page will also list a link to {{{import-maven-project.html} add a new project, imported from Maven}}.
+  
+* First run / no projects
+
+  When there are not projects in the system, a small text box will be shown indicating that a project needs to be
+  added, with the regular link below.

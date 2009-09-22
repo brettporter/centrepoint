@@ -1,0 +1,48 @@
+ ---
+ View Project
+ ---
+ 23 June 2009
+ ---
+ Brett Porter
+ ---
+ 
+View Project
+
+  URL: <<</centrepoint/project/PROJECT_ID>>>
+  
+  The project information page shows available panels of project information. The default panel is present initially
+  that contains basic project information from the model:
+  
+    * <<<name>>>
+     
+    * <<<version>>>
+    
+    * <<<description>>>
+     
+    * <<<url>>>
+    
+    * <<<scmUrl>>> = <<<scm/url>>>
+     
+    * <<<issueManagementUrl>>> = <<<issueManagement/url>>>
+
+    * <<<maven:groupId>>> 
+    
+    * <<<maven:artifactId>>>    
+
+  Any fields not present in the model should not show the labels either.
+  
+* Panels
+
+  Any available panel plugins should be shown on the right hand side. If the plugin is configurable, an edit link
+  is available that will go to the {{{edit-configuration.html} Edit Configuration}} page.  
+  
+* Missing Project
+  
+  If the project ID given above is not present in the store, the application should respond with 404 (Not Found).
+  
+* Missing ID
+
+  The URL: <<</centrepoint/project>>> should respond with a 404 (Not Found) message.
+  
+  
+  

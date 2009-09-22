@@ -1,0 +1,31 @@
+.feedbackPanelERROR {
+	color: #f00;
+}
+
+.feedbackPanelINFO {
+	list-style-type: none;
+}
+
+#sidebar {
+	border-bottom: none;
+}
+
+table {
+	border: 2px solid black;
+    border-collapse: collapse;
+    background-color: #fff;
+    width: 100%;
+}
+
+td {
+	padding: 0.5em;
+	border: 1px solid black;
+    width: 100%;
+}
+
+th {
+	white-space: nowrap;
+	text-align: right;
+	padding: 0.5em;
+	border: 1px solid black;
+}

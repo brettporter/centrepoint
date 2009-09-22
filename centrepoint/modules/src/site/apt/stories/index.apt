@@ -1,0 +1,22 @@
+ ---
+ Centrepoint - User Stories
+ ---
+ 23 June 2009
+ ---
+ Brett Porter
+ ---
+ 
+Centrepoint User Stories
+
+  Here we have some very basic descriptions of how the application is designed to function, used as a basis for
+  constructing the code and tests.
+  
+    * {{{project-list.html} First page: project list}}
+    
+    * {{{import-maven-project.html} Adding a new project by importing from Maven}}
+    
+    * {{{view-project.html} Viewing an individual project}}
+    
+    * {{{edit-configuration.html} Edit the configuration for a panel plugin}}
+    
+    

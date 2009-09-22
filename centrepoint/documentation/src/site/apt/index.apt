@@ -1,0 +1,54 @@
+ -----
+ Centerpoint Documentation
+ -----
+ Brett Porter
+ -----
+ 26 June 2009
+ -----
+
+Centrepoint User's Guide
+
+  Centrepoint is a very simple application for aggregating information about a project. This guide will show you
+  how to start the application and add projects to monitor.
+  
+* Installing Centrepoint
+
+  Centrepoint is distributed as a ZIP file, which can be unpacked and run directly.
+  
+----
+$ ./bin/centrepoint console
+----
+
+  The application can then be accessed from <<<http://localhost:8080/centrepoint/>>>.
+
+  You can also {{{build-from-source.html} build Centrepoint from source code}}.
+  
+* Using the Application
+
+  When opening the application, you will be presented with a list of projects that can be viewed. 
+  When it is run for the first time, the list will be empty and you will have the opportunity to add a new project.
+  
+** Adding a Project
+
+  When selecting to add a project, you will be presented with a prompt for the Maven group ID and artifact ID. If
+  correctly entered, the latest version of the project will be loaded from the Maven Central repository (including
+  your local repository) and added to Centrepoint. 
+
+** Viewing a Project
+
+  The project page is the main focus of the application. Once a project is added and viewed, information about it will
+  be printed on this page. At present, only the static information loaded from the Maven project descriptor will be
+  available.
+
+** Configuration Files
+
+  The application stores all of its configuration in <<<~/.centrepoint/project.properties>>>. Deleting the file will
+  remove all projects. Note that changes made while the application is running will not be detected.
+
+* Writing Plugins
+
+  Simple plugins can be written to add panels to the right-hand side of the project information page. See
+  {{{writing-plugins.html} Writing Plugins}} for more information.
+  
+
+  

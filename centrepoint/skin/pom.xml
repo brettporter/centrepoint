@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>centrepoint</artifactId>
+    <groupId>com.effectivemaven.centrepoint</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>skin</artifactId>
+  <name>Centrepoint Documentation Skin</name>
+</project>

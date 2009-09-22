@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="custom">
+ <description>
+  Default rules, no empty catch block errors
+ </description>
+ <rule ref="/rulesets/basic.xml">
+  <exclude name="EmptyCatchBlock" />
+ </rule>
+ <rule ref="/rulesets/imports.xml" />
+ <rule ref="/rulesets/unusedcode.xml" />
+ <rule ref="/rulesets/finalizers.xml" />
+</ruleset>

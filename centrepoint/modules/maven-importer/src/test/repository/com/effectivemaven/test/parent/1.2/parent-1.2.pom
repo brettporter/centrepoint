@@ -1,0 +1,9 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.effectivemaven.test</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.2</version>
+  <packaging>pom</packaging>
+  <description>Description from parent</description>
+  <url>http://url.from.parent/</url>  
+</project>

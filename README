@@ -1,0 +1,13 @@
+To build and use the application:
+
+ cd centrepoint
+ mvn clean install
+
+After a successful build, the file distribution/target/centrepoint-1.0-SNAPSHOT-bin.zip contains
+the full standalone application.
+
+To run, unzip it and run the following command:
+
+ bin/centrepoint console
+
+The application can then be viewed on http://localhost:8080/

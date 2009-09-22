@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="maven-importer by packages">
+  <test verbose="2" name="com.effectivemaven.centrepoint.maven" annotations="JDK">
+    <packages>
+      <package name="com.effectivemaven.centrepoint.maven"/>
+      <package name="com.effectivemaven.centrepoint.maven.repository"/>
+    </packages>
+  </test>
+</suite>

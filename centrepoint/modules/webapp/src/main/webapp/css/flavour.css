@@ -1,0 +1,293 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	background: url(../images/flavour/img01.jpg) repeat-x left top;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #787878;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: .15em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-size: 1.8em;
+}
+
+h2 {
+	font-size: 1.4em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+	text-decoration: none;
+	color: #C0BFBF;
+}
+
+a:hover {
+	background: none;
+}
+
+/* Header */
+
+#header {
+	width: 920px;
+	height: 98px;
+	margin: 0 auto;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 600px;
+}
+
+#logo h1 {
+	float: left;
+	padding-top: 20px;
+	text-transform: uppercase;
+	font-size: 2.6em;
+}
+
+#logo p {
+	float: left;
+	margin: 0;
+	padding: 30px 0 0 2px;
+	text-transform: lowercase;
+	font: 1.6em "Trebuchet MS", Arial, Helvetica, sans-serif;
+	
+} 
+
+#logo a {
+	background: none;
+	text-decoration: none;
+	color: #5F882C;
+}
+
+/* Search */
+
+#search {
+	float: right;
+	width: 200px;
+	padding-top: 16px;
+}
+
+#search form {
+	width: 230px;
+	height: 41px;
+	margin: 0;
+	padding: 15px 0 0 10px;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#search-text {
+	border: none;
+	text-transform: lowercase;
+	border: 1px #8DBC4A solid;
+	font: bold 1.2em Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+}
+
+#search-submit {
+	display: none;
+}
+
+/* Menu */
+
+#menu {
+	width: 920px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+#menu ul {
+	margin: 0;
+	margin-right: 30px;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu a {
+	margin-right: 3px;
+	padding: 5px 20px 5px 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	background: #566316;
+	color: #FFFFFF;
+}
+
+#menu a:hover {
+	text-decoration: underline;
+}
+
+/* Page */
+
+#page {
+	width: 920px;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 630px;
+}
+
+.post {
+	background: url(../images/flavour/img03.jpg) no-repeat left top;
+}
+
+.post .title {
+	padding: 15px 0 5px 20px;
+	color: #5C5C5C;
+}
+
+.post .title a {
+	background: none;
+	color: #5C5C5C;
+}
+
+.post .meta {
+	padding: 2px 20px;
+	border-top: 1px dashed #D2D4C9;
+	border-bottom: 1px dashed #D2D4C9;
+	text-transform: uppercase;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+.post .entry {
+	padding: 20px 20px;
+	text-align: justify;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	width: 260px;
+	border-bottom: 1px dashed #D2D4C9;
+	color: #787878;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+}
+
+#sidebar li ul {
+	padding: 20px;
+}
+
+#sidebar li li {
+	line-height: 35px;
+	background: url(../images/flavour/img05.jpg) no-repeat left center;
+	border-bottom: 1px dashed #D2D4C9;
+	padding-left: 15px;
+}
+
+#sidebar h2 {
+	padding: 5px 10px;
+	background: #79A73B url(../images/flavour/img04.jpg) repeat-x left top;
+	letter-spacing: -.5px;
+	font-size: 1.2em;
+	color: #FFFFFF;
+}
+
+#sidebar p {
+	padding: 20px;
+}
+
+#sidebar a {
+	color: #787878;
+}
+
+/* Calendar */
+
+#calendar {
+}
+
+#calendar_wrap {
+	padding: 20px;
+}
+
+#calendar table {
+	width: 100%;
+}
+
+#calendar tbody td {
+	text-align: center;
+}
+
+#calendar #next {
+	text-align: right;
+}
+
+/* Footer */
+
+#footer {
+	width: 100%;
+	height: 50px;
+	margin: 0 auto;
+	padding: 40px 0;
+	background: #90BF4D url(../images/flavour/img02.jpg) left top;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #416110;
+}
+
+#footer p {
+	margin: 0;
+	line-height: normal;
+	font-size: 9px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#footer a {
+	color: #FFFFFF;
+}

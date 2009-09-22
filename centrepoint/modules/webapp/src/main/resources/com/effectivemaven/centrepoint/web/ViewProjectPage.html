@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html
+  xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+<wicket:extend>
+  <div class="post">
+  <h1 class="title" wicket:id="name">Project Name</h1>
+  <div class="entry">
+  <p wicket:id="description">Description goes here.</p>
+  <table>
+    <tr>
+      <th>Current Version</th>
+      <td wicket:id="version">1.0-SNAPSHOT</td>
+    </tr>
+    <wicket:enclosure>
+      <tr>
+        <th>URL</th>
+        <td><a href="#" wicket:id="url">[url]</a></td>
+      </tr>
+    </wicket:enclosure>
+    <wicket:enclosure>
+      <tr>
+        <th>SCM URL</th>
+        <td><a href="#" wicket:id="scmUrl">[scm url]</a></td>
+      </tr>
+    </wicket:enclosure>
+    <wicket:enclosure>
+      <tr>
+        <th>Issue Tracker URL</th>
+        <td><a href="#" wicket:id="issueTrackerUrl">[issue url]</a></td>
+      </tr>
+    </wicket:enclosure>
+  </table>
+  </div>
+  </div>
+  <div class="post">
+  <h2 class="title">Maven</h2>
+  <div class="entry">
+  <table>
+    <tr>
+      <th>Group ID</th>
+      <td wicket:id="maven|groupId">group ID</td>
+    </tr>
+    <tr>
+      <th>Artifact ID</th>
+      <td wicket:id="maven|artifactId">artifact ID</td>
+    </tr>
+  </table>
+  </div>
+  </div>
+</wicket:extend>
+</body>
+</html>

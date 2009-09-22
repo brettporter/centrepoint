@@ -1,0 +1,18 @@
+ -----
+ Building Centrepoint from Source Code
+ -----
+ Brett Porter
+ -----
+ 11 August 2009
+ -----
+
+Building from Source Code
+
+  If you would prefer to build Centrepoint from the source, you can run the following from the Centrepoint directory:
+  
+----
+mvn clean install
+----
+
+  The application will be available in <<<distribution/target/centrepoint-${project.version}-bin.zip>>>.
+

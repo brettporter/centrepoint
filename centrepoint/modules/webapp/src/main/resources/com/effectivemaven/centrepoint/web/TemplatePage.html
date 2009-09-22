@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html
+  xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<head>
+<title wicket:id="title">Centrepoint</title>
+<link href="css/flavour.css" rel="stylesheet" type="text/css"
+  media="screen" />
+<link href="css/centrepoint.css" rel="stylesheet" type="text/css"
+  media="screen" />
+</head>
+<body>
+<div id="header">
+<div id="logo">
+<h1><a wicket:id="homeLink">Centrepoint</a></h1>
+</div>
+</div>
+<div id="menu"></div>
+<div id="page">
+<div id="content"><wicket:child /></div>
+<div id="sidebar">
+<wicket:enclosure child="panels">
+  <ul>
+    <li wicket:id="panels"><h2 wicket:id="name">[panel]</h2>
+    <ul>
+      <li wicket:id="items"><a href="#" wicket:id="link">[item]</a></li>
+    </ul>
+      <a href="#" wicket:id="editPanelLink">Edit Configuration</a>
+    </li>    
+  </ul>
+</wicket:enclosure>
+<wicket:enclosure child="operations">
+  <ul>
+    <li><h2>Administration</h2>
+    <ul>
+      <li wicket:id="operations"><a href="#"
+        wicket:id="operationLink"><span wicket:id="name">[operation]</span></a></li>
+    </ul>
+    </li>
+  </ul>
+</wicket:enclosure>
+</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+<div id="footer"><em wicket:id="build">[build number]</em></div>
+</body>
+</html>

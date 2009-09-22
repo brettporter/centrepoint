@@ -1,0 +1,33 @@
+## License Generator
+#macro(showUrl $url)
+#if($url)
+
+      ($url) #end
+#end
+This software is distributed under the following license(s):
+#foreach ($l  in $project.licenses)
+  - $l.name #showUrl ($l.url)
+
+#end
+
+#if (!$projectsSortedByOrganization.isEmpty())
+The software relies on a number of dependencies. The individual licenses are outlined below.
+
+#set ($keys = $projectsSortedByOrganization.keySet())
+#foreach ($o in $keys)
+From: '$o.name' #showUrl($o.url)
+
+#set ($projects = $projectsSortedByOrganization.get($o))
+#foreach ($p in $projects)
+
+  - $p.name #showUrl ($p.url)
+
+    $p.artifact
+#foreach ($l  in $p.licenses)
+    License: $l.name #showUrl ($l.url)
+
+#end
+
+#end
+#end
+#end

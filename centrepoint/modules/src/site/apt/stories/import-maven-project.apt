@@ -1,0 +1,58 @@
+ ---
+ Importing a Project from Maven
+ ---
+ 23 June 2009
+ ---
+ Brett Porter
+ ---
+ 
+Importing a Project from Maven
+
+  URL: <<</centrepoint/project/add-maven>>>
+  
+  A simple Maven import is all that is needed at this point. The user will be prompted to select the group ID and
+  artifact ID of a project. This should be the topmost POM of the overall project to import.
+  
+  The default Maven central repository and the local repository will be queried for available versions for the given
+  group and artifact ID. If only one is found, that will be selected. If multiple versions are found, the latest
+  release will be selected. If no versions are found, an error is given that the group ID and artifact ID are invalid.
+  
+  Once selected, the POM will be retrieved and converted into a Centrepoint project, mapping the following fields:
+  
+    * <<<name>>>
+     
+    * <<<version>>>
+    
+    * <<<description>>>
+     
+    * <<<url>>>
+    
+    * <<<scmUrl>>> = <<<scm/url>>>
+     
+    * <<<issueManagementUrl>>> = <<<issueManagement/url>>>
+
+    * <<<ciManagementUrl>>> = <<<ciManagement/url>>>
+     
+    * <<<repositoryUrl>>> = <<<distributionManagement/repository/url>>>
+     
+    * <<<snapshotRepositoryUrl>>> = <<<distributionManagement/snapshotRepository/url>>>
+     
+    * <<<maven:groupId>>> = <<<groupId>>> 
+    
+    * <<<maven:artifactId>>> = <<<artifactId>>>
+
+  []
+  
+    Normal Maven inheritance and interpolation applies.
+  
+* Invalid metadata
+ 
+  The application ignores the case where versions exist but the metadata is not up to date.
+  
+* Repository errors
+
+  Repository retrieval errors will be displayed on a separate "fatal" error page.
+
+* Modules
+
+  Modules are currently not read, relying on information from the root project (and it's parents).

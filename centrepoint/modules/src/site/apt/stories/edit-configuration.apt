@@ -1,0 +1,18 @@
+ ---
+ Editing Plugin Configuration
+ ---
+ 5 July 2009
+ ---
+ Brett Porter
+ ---
+ 
+Editing a Plugin's Configuration
+
+  URL: <<</centrepoint/project/edit-panel/PROJECT_ID/PLUGIN_ID>>>
+  
+  This page presents a very simple form that allows text entry of each configuration option in the model. None of the
+  fields will be required or validated.
+  
+  Once submitted, the configuration is saved to the Centrepoint configuration file and the plugin updated. The
+  application then refers to the previous project entry page.
+  

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project>
+  <skin>
+    <groupId>com.effectivemaven.centrepoint</groupId>
+    <artifactId>skin</artifactId>
+    <version>${project.version}</version>
+  </skin>
+  <bannerRight>
+    <src>images/centrepoint.jpg</src>
+  </bannerRight>
+  <body>
+    <menu name="Developer Documentation">
+      <item name="Introduction" href="/index.html" />
+      <item name="Stories" href="/stories/index.html" />
+    </menu>
+    <menu ref="modules" />
+    <menu ref="reports" />
+  </body>
+</project>
