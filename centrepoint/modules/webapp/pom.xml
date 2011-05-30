@@ -50,13 +50,15 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>buildnumber-maven-plugin</artifactId>
-        <version>1.0-beta-1</version>
+        <version>1.0</version>
         <configuration>
+<!-- Alternative configuration to use a sequential number generated locally, when SCM is not configured
           <format>Build: #{0} ({1,date})</format>
           <items>
             <item>buildNumber\d*</item>
             <item>timestamp</item>
           </items>
+-->
         </configuration>
         <executions>
           <execution>

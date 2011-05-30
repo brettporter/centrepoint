@@ -15,6 +15,10 @@
   <description>
     Centrepoint is a basic but useful application that sets up a dashboard of project information from Maven, Archiva and Continuum.
   </description>
+  <scm>
+    <connection>scm:git:git@github.com:brettporter/centrepoint.git</connection>
+    <developerConnection>scm:git:git@github.com:brettporter/centrepoint.git</developerConnection>
+  </scm>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
