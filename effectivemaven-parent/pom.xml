@@ -9,8 +9,8 @@
   <packaging>pom</packaging>
   <version>1-SNAPSHOT</version>
   <scm>
-    <connection>scm:git:git://github.com/carlossg/centrepoint.git</connection>
-    <developerConnection>scm:git:git://github.com/carlossg/centrepoint.git</developerConnection>
+    <connection>scm:git:git://github.com/brettporter/centrepoint.git</connection>
+    <developerConnection>scm:git:git://github.com/brettporter/centrepoint.git</developerConnection>
   </scm>
   <organization>
     <name>Apache Maven 2: Effective Implementations Book</name>
