@@ -10,7 +10,7 @@
   <version>1-SNAPSHOT</version>
   <scm>
     <connection>scm:git:git://github.com/brettporter/centrepoint.git</connection>
-    <developerConnection>scm:git:git://github.com/brettporter/centrepoint.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:brettporter/centrepoint.git</developerConnection>
   </scm>
   <organization>
     <name>Apache Maven 2: Effective Implementations Book</name>
@@ -19,11 +19,11 @@
   <distributionManagement>
     <repository>
       <id>releases</id>
-      <url>http://localhost:8081/archiva/repository/releases</url>
+      <url>http://localhost:8080/archiva/repository/releases</url>
     </repository>
     <snapshotRepository>
       <id>snapshots</id>
-      <url>http://localhost:8081/archiva/repository/snapshots</url>
+      <url>http://localhost:8080/archiva/repository/snapshots</url>
     </snapshotRepository>
   </distributionManagement>
   <developers>
