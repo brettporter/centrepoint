@@ -42,6 +42,10 @@
               <name>selenium.browser</name>
               <value>${selenium.browser}</value>
             </property>
+            <property>
+              <name>selenium.port</name>
+              <value>${selenium.port}</value>
+            </property>
           </systemProperties>
         </configuration>
       </plugin>
@@ -136,5 +140,6 @@
   </profiles>
   <properties>
     <selenium.browser>*firefox</selenium.browser>
+    <selenium.port>4444</selenium.port>
   </properties>
 </project>

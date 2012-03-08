@@ -31,15 +31,15 @@ public abstract class AbstractSeleniumTestCase
     protected static Selenium selenium;
 
     @BeforeSuite
-    @Parameters( { "selenium.browser" } )
-    public void startSelenium( @Optional String browser )
+    @Parameters( { "selenium.browser", "selenium.port" } )
+    public void startSelenium( @Optional String browser, @Optional int port )
     {
         if ( browser == null )
         {
             browser = "*firefox";
         }
 
-        selenium = new DefaultSelenium( "localhost", 4444, browser, "http://localhost:8080" );
+        selenium = new DefaultSelenium( "localhost", port, browser, "http://localhost:8080" );
         selenium.start();
 
     }
