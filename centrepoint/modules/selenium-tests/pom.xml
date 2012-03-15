@@ -46,6 +46,10 @@
               <name>selenium.port</name>
               <value>${selenium.port}</value>
             </property>
+            <property>
+              <name>jetty.port</name>
+              <value>${jetty.port}</value>
+            </property>
           </systemProperties>
         </configuration>
       </plugin>
@@ -141,5 +145,6 @@
   <properties>
     <selenium.browser>*firefox</selenium.browser>
     <selenium.port>4444</selenium.port>
+    <jetty.port>8080</jetty.port>
   </properties>
 </project>
