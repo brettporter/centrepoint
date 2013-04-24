@@ -30,14 +30,16 @@ public class BuildNumber
 {
     private final String buildMessage;
 
+    private Date buildDate = null;
+
     public BuildNumber()
     {
         String msg;
         try
         {
             ResourceBundle bundle = ResourceBundle.getBundle( "build" );
-            Date time = new Date( Long.valueOf( bundle.getString( "build.timestamp" ) ) );
-            msg = bundle.getString( "build.message" ) + " at " + time;
+            msg = bundle.getString( "build.message" );
+            buildDate = new Date( Long.valueOf( bundle.getString( "build.timestamp" ) ) );
         }
         catch ( MissingResourceException e )
         {
@@ -49,5 +51,10 @@ public class BuildNumber
     public String getBuildMessage()
     {
         return buildMessage;
+    }
+
+    public String getBuildDate()
+    {
+        return buildDate.toString();
     }
 }

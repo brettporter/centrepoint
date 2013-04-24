@@ -72,6 +72,7 @@ public class TemplatePage
     private void addComponents( final String id )
     {
         add( new Label( "build", buildNumber.getBuildMessage() ) );
+        add( new Label( "buildDate", buildNumber.getBuildDate() ) );
         String ip;
         try
         {
