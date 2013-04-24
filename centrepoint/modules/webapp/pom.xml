@@ -59,9 +59,11 @@
             <item>timestamp</item>
           </items>
 -->
+          <timestampPropertyName>rawtimestamp</timestampPropertyName>
         </configuration>
         <executions>
           <execution>
+            <id>build-revision</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>create</goal>
