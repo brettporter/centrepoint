@@ -6,19 +6,25 @@ Building
 Before building Centrepoint, you need the license resources built (as there
 is no repository to distribute them from at present):
 
-  cd license-resources
-  mvn clean install
+```
+cd license-resources
+mvn clean install
+````
 
 To build and use the Centrepoint application:
 
-  cd centrepoint
-  mvn clean install
+```
+cd centrepoint
+mvn clean install
+```
 
 After a successful build, the file `distribution/target/centrepoint-1.0-SNAPSHOT-bin.zip`
 contains the full standalone application.
 
 To run, unzip it and run the following command:
 
-  bin/centrepoint console
+```
+bin/centrepoint console
+```
 
 The application can then be viewed on http://localhost:8080/centrepoint/
