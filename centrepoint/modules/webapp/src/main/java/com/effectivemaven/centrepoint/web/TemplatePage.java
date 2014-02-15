@@ -72,6 +72,17 @@ public class TemplatePage
     private void addComponents( final String id )
     {
         add( new Label( "build", buildNumber.getBuildMessage() ) );
+        add( new Label( "buildDate", buildNumber.getBuildDate() ) );
+        String ip;
+        try
+        {
+            ip = java.net.InetAddress.getLocalHost().getHostAddress();
+        }
+        catch (java.net.UnknownHostException e)
+        {
+            ip = "Unknown";
+        }
+        add( new Label( "host", ip ) );
         add( new Label( "title", new PropertyModel<String>( this, "pageTitle" ) ) );
         add( new BookmarkablePageLink<String>( "homeLink", ListProjectsPage.class ) );
 

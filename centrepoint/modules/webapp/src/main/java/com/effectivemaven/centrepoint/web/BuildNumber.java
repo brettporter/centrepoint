@@ -16,6 +16,7 @@ package com.effectivemaven.centrepoint.web;
  * limitations under the License. 
  */
 
+import java.util.Date;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
@@ -29,6 +30,8 @@ public class BuildNumber
 {
     private final String buildMessage;
 
+    private Date buildDate = null;
+
     public BuildNumber()
     {
         String msg;
@@ -36,6 +39,7 @@ public class BuildNumber
         {
             ResourceBundle bundle = ResourceBundle.getBundle( "build" );
             msg = bundle.getString( "build.message" );
+            buildDate = new Date( Long.valueOf( bundle.getString( "build.timestamp" ) ) );
         }
         catch ( MissingResourceException e )
         {
@@ -47,5 +51,10 @@ public class BuildNumber
     public String getBuildMessage()
     {
         return buildMessage;
+    }
+
+    public String getBuildDate()
+    {
+        return buildDate.toString();
     }
 }
